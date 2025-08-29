@@ -11,12 +11,10 @@ export const useLogin = () => {
     if (token) {
       setUsername(getUsername(token));
       setIsLoggedIn(true);
-      console.log("masuk");
     } else {
       setIsLoggedIn(false);
     }
     setIsLoading(false);
   }, []);
-  console.log(isLoggedIn);
   return { username, isLoggedIn, isLoading };
 };

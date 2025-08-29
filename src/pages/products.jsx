@@ -69,13 +69,12 @@ export default function ProductsPage() {
       </div>
       <div className="flex p-5">
         <div className="flex flex-wrap justify-start w-4/6 gap-4">
-          {products && console.log(products)}
           {products &&
             products.length > 0 &&
             products.map((product) => (
               <CardProduct key={product.id}>
-                <CardProduct.Header image={product.image} />
-                <CardProduct.Body title={product.title}>
+                <CardProduct.Header image={product.image} id={product.id} />
+                <CardProduct.Body title={product.title} id={product.id}>
                   {product.description}
                 </CardProduct.Body>
                 <CardProduct.Footer
