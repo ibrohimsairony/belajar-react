@@ -17,7 +17,6 @@ export default function TableCart({ products }) {
         const product = products.find((product) => product.id === item.id);
         return acc + product.price * item.qty;
       }, 0);
-      console.log(sum);
       dispatch({ type: "UPDATE", payload: { total: sum } });
       localStorage.setItem("cart", JSON.stringify(cart));
     }
