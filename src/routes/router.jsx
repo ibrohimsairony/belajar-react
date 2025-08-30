@@ -6,6 +6,7 @@ import ProductsPage from "../pages/products";
 import ProfilePage from "../pages/profile";
 import ProtectedRoute from "./ProtectedRoute";
 import DetailProductPage from "../pages/detailProduct";
+import Navbar from "../components/layouts/Navbar";
 
 const router = createBrowserRouter([
   { path: "/", element: <h1>Hello World</h1>, errorElement: <ErrorPage /> },
@@ -13,11 +14,18 @@ const router = createBrowserRouter([
   {
     element: <ProtectedRoute />,
     children: [
-      { path: "/profile", element: <ProfilePage /> },
-      { path: "/products", element: <ProductsPage /> },
-      { path: "/product/:productId", element: <DetailProductPage /> },
+      {
+        element: <Navbar />,
+
+        children: [
+          { path: "/profile", element: <ProfilePage /> },
+          { path: "/products", element: <ProductsPage /> },
+          { path: "/product/:productId", element: <DetailProductPage /> },
+        ],
+      },
     ],
   },
+
   { path: "/register", element: <RegisterPage /> },
 ]);
 

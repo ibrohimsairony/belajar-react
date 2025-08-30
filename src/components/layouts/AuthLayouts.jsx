@@ -1,9 +1,22 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { DarkModeContext } from "../../contexts/DarkMode";
+import ToggleDarkMode from "../elements/ToggleDarkMode";
 
 export default function AuthLayouts({ children, title }) {
+  const { isDarkMode } = useContext(DarkModeContext);
   return (
-    <div className="flex justify-center min-h-screen items-center ">
-      <div className="w-full max-w-xs">
+    <div
+      className={`flex justify-center min-h-screen items-center ${
+        isDarkMode && "bg-slate-700"
+      } `}
+    >
+      <ToggleDarkMode />
+      <div
+        className={`w-full max-w-xs border px-5 py-3 rounded-lg ${
+          isDarkMode && "bg-slate-300"
+        }`}
+      >
         <h1 className="text-3xl font-bold text-center mb-2 text-blue-600">
           {title}
         </h1>
