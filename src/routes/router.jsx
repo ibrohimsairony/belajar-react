@@ -10,6 +10,7 @@ import Navbar from "../components/layouts/Navbar";
 import UseIdPage from "../pages/learn/UseIdPage";
 import MemoPage from "../pages/learn/MemoPage";
 import UseMemoPage from "../pages/learn/UseMemoPage";
+import UseCallbackPage from "../pages/learn/UseCallbackPage";
 
 const router = createBrowserRouter([
   { path: "/", element: <h1>Hello World</h1>, errorElement: <ErrorPage /> },
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
   { path: "/learn/useId", element: <UseIdPage /> },
   { path: "/learn/memo", element: <MemoPage /> },
   { path: "/learn/usememo", element: <UseMemoPage /> },
+  { path: "/learn/usecallback", element: <UseCallbackPage /> },
 ]);
 
 export default router;
